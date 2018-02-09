@@ -19,7 +19,7 @@ class CategoryController extends Controller
                 $cat_name = $cat['category_name'];
             }
         }
-        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url_title'])->where('category_id', $cat_id)->get();
+        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url'])->where('category_id', $cat_id)->get();
         
         //dump($categories);
         

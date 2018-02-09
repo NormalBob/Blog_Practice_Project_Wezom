@@ -12,6 +12,7 @@
 
         </div>
     </div>
+
     -->
     <div class="blog">
       <div class="container">
@@ -28,11 +29,10 @@
                             <p class="card-text">{{ $article -> text }}</p>
                             <hr>
                             <h4>Tags: 
-                                <a href="#" class="btn btn-info btn-sm" role="button">tag</a>
-                                <a href="#" class="btn btn-info btn-sm" role="button">cat</a>
-                                <a href="#" class="btn btn-info btn-sm" role="button">dog</a>
-                                <a href="#" class="btn btn-info btn-sm" role="button">elephant</a>
-                                <a href="#" class="btn btn-info btn-sm" role="button">turtle</a>
+                                @foreach($tags as $tag)
+                                  <a href="{{ route('tagShow', ['tag_url'=>$tag->url]) }}" class="btn btn-info btn-sm" role="button">{{ $tag->name }}</a>
+                                @endforeach
+                              
                             </h4>
                         </div>
                      </div>

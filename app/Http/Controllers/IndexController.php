@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url_title'])->get();
+        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url'])->get();
         $categories = Articles_categorie::all();
 
         return view('home')->with([

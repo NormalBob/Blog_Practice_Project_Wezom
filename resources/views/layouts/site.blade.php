@@ -76,6 +76,7 @@
           @yield('about_content')
           @yield('contact_content')
           @yield('category_content')
+          @yield('tag_content')
           
            <footer>
              <div class="container">

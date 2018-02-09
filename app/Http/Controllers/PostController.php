@@ -5,17 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Articles_categorie;
 use App\Article;
+use App\Tag;
 
 class PostController extends Controller
 {
-    public function post ($category_url, $url_title)
+    public function post ($category_url, Article $url)
     {
         $categories = Articles_categorie::all();
-        $article = Article::where('url_title', $url_title)->first();;
-        //dump();
+        $article = Article::where('url', $url['url'])->first();
+        
+        $tags = $url -> tags;
+        
+        //dump($tags);
         return view('post')->with([
             'categories' => $categories,
-            'article' => $article
+            'article' => $article,
+            'tags' => $tags
         ]);
     }
 }

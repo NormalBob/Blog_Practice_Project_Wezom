@@ -8,7 +8,7 @@
                  <div class=" mx-auto col-lg-6 col-lg-offset-3 text-center">  
                     <h2 class="mar-top">
                         <span class="ion-minus"></span>
-                        {{ $category_name }}
+                        {{ $tag->name }}
                         <span class="ion-minus"></span>
                     </h2>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis  dis parturient montes, nascetur ridiculus </p><br>
@@ -24,13 +24,15 @@
                         <div class="card-block">
                             <h4 class="card-title">{{ $art->title }}</h4>
                             <p class="">Categorie: 
-                                <a href="{{ route('categoryShow', [$category_url]) }}">
-                                     {{ $category_name }}
-                                </a>
+                                @foreach($categories as $cat)
+                                    @if($cat->id == $art->category_id)
+                                         <a href="{{ route('categoryShow', [$category_url = $cat->url]) }}">{{ $cat->category_name }}</a>  
+                                    @endif
+                                @endforeach
                             </p>
                             <p class="card-text  ">{{ mb_substr(strip_tags($art->text), 0, 110, 'utf-8')."..." }}</p>
                             <a class="btn btn-default" href="{{ route('articleShow', ['category_url'=>$category_url,
-                            'url_title'=>$art->url_title]) }}">Read More</a>
+                            'url_title'=>$art->url]) }}">Read More</a>
                         </div>
                      </div>
                 </div>

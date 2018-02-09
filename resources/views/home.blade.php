@@ -29,7 +29,7 @@
                             </p>
                             <p class="card-text  ">{{ mb_substr(strip_tags($art->text), 0, 110, 'utf-8')."..." }}</p>
                             <a class="btn btn-default" href="{{ route('articleShow', ['category_url'=>$category_url,
-                            'url_title'=>$art->url_title]) }}">Read More</a>
+                            'url'=>$art->url]) }}">Read More</a>
                         </div>
                      </div>
                 </div>
