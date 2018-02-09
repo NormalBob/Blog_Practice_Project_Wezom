@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 09 2018 г., 17:32
+-- Время создания: Фев 09 2018 г., 23:44
 -- Версия сервера: 5.6.38
 -- Версия PHP: 7.2.0
 
@@ -29,23 +29,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `articles` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `url_title` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `text` text NOT NULL,
-  `pubdate` datetime NOT NULL,
-  `category_id` int(20) NOT NULL,
-  `view` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `articles`
 --
 
-INSERT INTO `articles` (`id`, `title`, `url_title`, `img`, `text`, `pubdate`, `category_id`, `view`) VALUES
-(1, 'Post1', 'post_1', 'img.jpg', 'Задача организации, в особенности же начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий. Не следует, однако забывать, что рамки и место обучения кадров играет важную роль в формировании систем массового участия. Не следует, однако забывать, что консультация с широким активом способствует подготовки и реализации позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако забывать, что сложившаяся структура организации требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.\r\n\r\nЗадача организации, в особенности же реализация намеченных плановых заданий позволяет выполнять важные задания по разработке дальнейших направлений развития. Не следует, однако забывать, что консультация с широким активом влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. Товарищи! сложившаяся структура организации позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако забывать, что реализация намеченных плановых заданий требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.', '2018-02-07 03:09:12', 1, 5),
-(2, 'Post2', 'post_2', 'img.jpg', 'Товарищи! дальнейшее развитие различных форм деятельности требуют от нас анализа существенных финансовых и административных условий. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.\r\n\r\nРавным образом рамки и место обучения кадров влечет за собой процесс внедрения и модернизации новых предложений. Идейные соображения высшего порядка, а также консультация с широким активом позволяет выполнять важные задания по разработке направлений прогрессивного развития. Товарищи! консультация с широким активом требуют от нас анализа систем массового участия. Таким образом консультация с широким активом в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако забывать, что консультация с широким активом способствует подготовки и реализации модели развития. Таким образом рамки и место обучения кадров позволяет оценить значение новых предложений.', '2018-02-08 04:09:15', 2, 10);
+INSERT INTO `articles` (`id`, `title`, `url`, `text`, `category_id`, `img`, `created_at`, `updated_at`) VALUES
+(1, 'Lorem ipsum dolor sit amet 1', 'lorem_ipsum_dolor_sit_amet_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 1, 'img.jpg', '2018-02-09 17:56:08', '2018-02-09 17:56:08'),
+(2, 'Lorem ipsum dolor sit amet 2', 'lorem_ipsum_dolor_sit_amet_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 2, 'img.jpg', '2018-02-09 17:56:08', '2018-02-09 17:56:08');
 
 -- --------------------------------------------------------
 
@@ -78,7 +78,17 @@ INSERT INTO `articles_categories` (`id`, `category_name`, `url`) VALUES
 CREATE TABLE `article_tag` (
   `article_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `article_tag`
+--
+
+INSERT INTO `article_tag` (`article_id`, `tag_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 1);
 
 -- --------------------------------------------------------
 
@@ -111,8 +121,10 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1);
+(5, '2014_10_12_000000_create_users_table', 1),
+(6, '2014_10_12_100000_create_password_resets_table', 1),
+(7, '2018_02_09_172733_create_tags_table', 1),
+(8, '2018_02_09_173227_create_articles_table', 1);
 
 -- --------------------------------------------------------
 
@@ -133,10 +145,22 @@ CREATE TABLE `password_resets` (
 --
 
 CREATE TABLE `tags` (
-  `id` int(11) NOT NULL,
-  `tag_name` varchar(255) NOT NULL,
-  `tag_url` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `tags`
+--
+
+INSERT INTO `tags` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
+(1, 'public', 'public', '2018-02-09 17:54:48', '2018-02-09 17:54:48'),
+(2, 'private', 'private', '2018-02-09 17:54:48', '2018-02-09 17:54:48'),
+(3, 'basic', 'basic', '2018-02-09 17:55:04', '2018-02-09 17:55:04'),
+(4, 'default', 'default', '2018-02-09 17:55:04', '2018-02-09 17:55:04');
 
 -- --------------------------------------------------------
 
@@ -163,7 +187,7 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `articles_title_unique` (`title`);
 
 --
 -- Индексы таблицы `articles_categories`
@@ -175,8 +199,7 @@ ALTER TABLE `articles_categories`
 -- Индексы таблицы `article_tag`
 --
 ALTER TABLE `article_tag`
-  ADD KEY `article_id` (`article_id`),
-  ADD KEY `tag_id` (`tag_id`);
+  ADD PRIMARY KEY (`article_id`,`tag_id`);
 
 --
 -- Индексы таблицы `comments`
@@ -200,7 +223,9 @@ ALTER TABLE `password_resets`
 -- Индексы таблицы `tags`
 --
 ALTER TABLE `tags`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `tags_name_unique` (`name`),
+  ADD UNIQUE KEY `tags_url_unique` (`url`);
 
 --
 -- Индексы таблицы `users`
@@ -217,7 +242,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `articles_categories`
@@ -235,30 +260,19 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- Ограничения внешнего ключа сохраненных таблиц
---
-
---
--- Ограничения внешнего ключа таблицы `article_tag`
---
-ALTER TABLE `article_tag`
-  ADD CONSTRAINT `article_tag_ibfk_1` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`),
-  ADD CONSTRAINT `article_tag_ibfk_2` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
