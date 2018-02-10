@@ -7,7 +7,7 @@ use App\Articles_categorie;
 
 class AboutController extends Controller
 {
-    public function about()
+    public function indexs()
     {
         $categories = Articles_categorie::all();
         

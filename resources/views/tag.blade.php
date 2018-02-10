@@ -39,6 +39,12 @@
             @endforeach
                 
             </div>
+            
+            <div class="row">
+                <div class="mx-auto text-center">  
+                   {!! $articles -> links('pagination::bootstrap-4'); !!}
+                 </div>
+            </div>
         </div>
     </div>
 @endsection

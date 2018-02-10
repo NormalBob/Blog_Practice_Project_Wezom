@@ -8,7 +8,7 @@ use App\Articles_categorie;
 
 class CategoryController extends Controller
 {
-    public function category($category_url)
+    public function index($category_url)
     {
         $categories = Articles_categorie::all();
         foreach($categories as $cat)
@@ -19,7 +19,10 @@ class CategoryController extends Controller
                 $cat_name = $cat['category_name'];
             }
         }
-        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url'])->where('category_id', $cat_id)->get();
+        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url'])
+            ->where('category_id', $cat_id)
+            ->orderBy('id', 'desc')
+            ->paginate(6);
         
         //dump($categories);
         

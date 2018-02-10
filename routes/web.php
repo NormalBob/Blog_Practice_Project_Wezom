@@ -17,12 +17,15 @@ Route::get('/login', function(){
     return view('login');
 });
 
-Route::get('/tags/{tag_url}', 'TagController@tag')->name('tagShow');
+Route::get('/about', 'AboutController@index');
 
-Route::get('/{category_url}', 'CategoryController@category')->name('categoryShow');
-Route::get('/{category_url}/{url}', 'PostController@post')->name('articleShow');
+Route::get('/contact', 'ContactController@index');
+Route::post('/contact', 'ContactController@store');
+
+Route::get('/tags/{tag_url}', 'TagController@index')->name('tagShow');
+
+Route::get('/{category_url}', 'CategoryController@index')->name('categoryShow');
+Route::get('/{category_url}/{url}', 'PostController@index')->name('articleShow');
 
 
 
-Route::get('/about', 'AboutController@about');
-Route::get('/contact', 'ContactController@contact');

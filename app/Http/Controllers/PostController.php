@@ -9,7 +9,7 @@ use App\Tag;
 
 class PostController extends Controller
 {
-    public function post ($category_url, Article $url)
+    public function index ($category_url, Article $url)
     {
         $categories = Articles_categorie::all();
         $article = Article::where('url', $url['url'])->first();

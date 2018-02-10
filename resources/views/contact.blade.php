@@ -33,35 +33,55 @@
 					 <div class="card">
                        <div class="card-block">
                             <h4 class="card-title">Contact Us</h4>
-                            
-                            <div class="col-lg-12">
-			    	            <div class="form-group">
-                                    <input type="text" name="full_name" id="ad_soyad" class="form-control" placeholder="Full name">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-			    	            <div class="form-group">
-                                    <input type="text" name="telephone" id="ad_soyad" class="form-control" placeholder="+38(xxx)-xxx-xx-xx">
-                                </div>
-                            </div>
                            
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea type="text" class="form-control" name="message" rows="5" style="overflow:hidden" placeholder="Message"></textarea>
-                                </div>
-                            </div>
+                            <form method="post" action="/contact">
+                                {{ csrf_field() }}
 
-                            <div class="col-lg-12">
-                                <button type="submit" class="btn btn-default">
-                                    <span>SUBMIT</span>
-                                </button>
-                            </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input type="full_name" name="full_name" id="ad_soyad" class="form-control" placeholder="Full name" >
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input type="telephone" name="telephone" id="ad_soyad" class="form-control" placeholder="+38(xxx)-xxx-xx-xx" >
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" >
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <textarea type="message" class="form-control" name="message" rows="5" style="overflow:hidden" placeholder="Message" ></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                   <div class="form-group">
+                                        <button type="submit" class="btn btn-default">SUBMIT</button>
+                                    </div>
+                                </div>
+                                
+                                @if(count($errors))
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                
+                            </form>
+                            
                         </div>
                      </div>
                 </div>
