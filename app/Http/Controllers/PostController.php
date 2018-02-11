@@ -9,16 +9,17 @@ use App\Tag;
 
 class PostController extends Controller
 {
-    public function index ($category_url, Article $url)
+    public function index ($category_url, Article $post_url)
     {
         $categories = Articles_categorie::all();
-        $article = Article::where('url', $url['url'])->first();
+        $article = Article::where('url', $post_url['url'])->first();
         
-        $tags = $url -> tags;
+        $tags = $post_url -> tags;
         
         //dump($tags);
         return view('post')->with([
             'categories' => $categories,
+            'category_url' => $category_url,
             'article' => $article,
             'tags' => $tags
         ]);

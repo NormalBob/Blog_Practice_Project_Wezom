@@ -47,18 +47,25 @@
 				<div class="mx-auto col-lg-8 " >
 					 <div class="card">
                        <div class="card-block">
+                           
                             <h4 class="card-title">Add Comment</h4>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea type="text" class="form-control" name="message" rows="5" style="overflow:hidden" placeholder="Message"></textarea>
+                            
+                            <form method="post" action="/{{ $category_url }}/{{ $article -> url }}/comments">
+                               {{ csrf_field() }}
+                               
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <textarea type="text" class="form-control" name="text" rows="5" style="overflow:hidden" placeholder="Message"></textarea>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-lg-12">
-                                <button type="submit" class="btn btn-default">
-                                    <span>SUBMIT</span>
-                                </button>
-                            </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-default">
+                                        <span>SUBMIT</span>
+                                    </button>
+                                </div>
+                            </form>
+                            
                         </div>
                      </div>
                 </div>
@@ -76,27 +83,22 @@
                         </div>
                         <div class="card-block">
                             <ul class="list-unstyled">
-                              <li class="media">
-                                <img class="d-flex mr-3" src="https://image.flaticon.com/icons/svg/148/148717.svg" alt="Generic placeholder image">
-                                <div class="media-body">
-                                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                                </div>
-                              </li>
-                              <li class="media my-4">
-                                <img class="d-flex mr-3" src="https://image.flaticon.com/icons/svg/148/148717.svg" alt="Generic placeholder image">
-                                <div class="media-body">
-                                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                                </div>
-                              </li>
-                              <li class="media">
-                                <img class="d-flex mr-3" src="https://image.flaticon.com/icons/svg/148/148717.svg" alt="Generic placeholder image">
-                                <div class="media-body">
-                                  <h5 class="mt-0 mb-1">List-based media object</h5>
-                                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                                </div>
-                              </li>
+                            @if(count($article->comments) > 0)
+                               
+                                @foreach($article->comments as $comment)
+                                  <li class="media">
+                                    <img class="d-flex mr-3" src="https://image.flaticon.com/icons/svg/148/148717.svg" alt="Generic placeholder image">
+                                    <div class="media-body">
+                                      <h5 class="mt-0 mb-1">Dima <small>{{ $comment->created_at->diffForHumans() }}</small></h5>
+                                        {{ $comment->text }}
+                                    </div>
+                                  </li>
+                                @endforeach
+                                
+                            @else
+                                 <h5 class="mt-0 mb-1"> - Comments not exist</h5>
+                            @endif
+                            
                             </ul>
                         </div>
                      </div>

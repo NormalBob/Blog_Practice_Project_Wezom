@@ -25,7 +25,9 @@ Route::post('/contact', 'ContactController@store');
 Route::get('/tags/{tag_url}', 'TagController@index')->name('tagShow');
 
 Route::get('/{category_url}', 'CategoryController@index')->name('categoryShow');
-Route::get('/{category_url}/{url}', 'PostController@index')->name('articleShow');
+Route::get('/{category_url}/{post_url}', 'PostController@index')->name('articleShow');
+
+Route::post('/{category_url}/{post_url}/comments', 'CommentsController@store');
 
 
 
