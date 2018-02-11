@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 09 2018 г., 23:44
+-- Время создания: Фев 11 2018 г., 20:06
 -- Версия сервера: 5.6.38
 -- Версия PHP: 7.2.0
 
@@ -45,7 +45,13 @@ CREATE TABLE `articles` (
 
 INSERT INTO `articles` (`id`, `title`, `url`, `text`, `category_id`, `img`, `created_at`, `updated_at`) VALUES
 (1, 'Lorem ipsum dolor sit amet 1', 'lorem_ipsum_dolor_sit_amet_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 1, 'img.jpg', '2018-02-09 17:56:08', '2018-02-09 17:56:08'),
-(2, 'Lorem ipsum dolor sit amet 2', 'lorem_ipsum_dolor_sit_amet_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 2, 'img.jpg', '2018-02-09 17:56:08', '2018-02-09 17:56:08');
+(2, 'Lorem ipsum dolor sit amet 2', 'lorem_ipsum_dolor_sit_amet_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 2, 'img.jpg', '2018-02-09 17:56:08', '2018-02-09 17:56:08'),
+(3, 'Lorem ipsum dolor 3', 'Lorem_ipsum_dolor_3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 4, 'img.jpg', '2018-02-10 20:43:17', '2018-02-10 20:43:17'),
+(4, 'Lorem ipsum dolor 4', 'Lorem_ipsum_dolor_4', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 3, 'img.jpg', '2018-02-10 20:43:17', '2018-02-10 20:43:17'),
+(5, 'Lorem ipsum dolor sit 5', 'Lorem_ipsum_dolor_sit_5', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 1, 'igm.jpg', '2018-02-10 20:44:25', '2018-02-10 20:44:25'),
+(6, 'Lorem ipsum dolor sit 6', 'Lorem_ipsum_dolor_sit_6', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 1, 'igm.jpg', '2018-02-10 20:44:25', '2018-02-10 20:44:25'),
+(7, 'Lorem ipsum dolor sit 7', 'Lorem_ipsum_dolor_sit_7', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 2, 'igm.jpg', '2018-02-10 20:45:17', '2018-02-10 20:45:17'),
+(8, 'Lorem ipsum dolor sit 8', 'Lorem_ipsum_dolor_sit_8', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet mattis lectus. Nullam vel imperdiet neque, at facilisis purus. Praesent tincidunt massa non arcu dapibus, at luctus erat luctus. Praesent rutrum commodo convallis. Sed non urna tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet eget mauris malesuada dapibus. Etiam volutpat scelerisque tellus, id gravida arcu pretium ac. Aenean hendrerit egestas enim, sed tempus purus feugiat vel. Sed feugiat, tellus vel finibus luctus, erat lectus dignissim purus, id aliquet purus ex ac sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis ante tristique, congue mi eget, interdum sapien. Sed condimentum at lectus quis ultrices. Sed posuere feugiat est, et ornare dolor commodo id. Duis consequat lorem ut ex finibus imperdiet. Vivamus ut magna ante.\r\n\r\nQuisque venenatis augue non erat convallis hendrerit. Nullam metus justo, ullamcorper in libero non, pulvinar feugiat metus. Duis lacinia augue quis blandit malesuada. Sed pretium bibendum urna et scelerisque. Curabitur in auctor enim. Quisque tempor justo non interdum sollicitudin. Vivamus est augue, ultricies quis mauris eu, euismod vestibulum massa.', 1, 'igm.jpg', '2018-02-10 20:45:17', '2018-02-10 20:45:17');
 
 -- --------------------------------------------------------
 
@@ -97,12 +103,25 @@ INSERT INTO `article_tag` (`article_id`, `tag_id`) VALUES
 --
 
 CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `text` text NOT NULL,
-  `pubdate` datetime NOT NULL,
-  `article_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `article_id` int(11) NOT NULL,
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `article_id`, `text`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'The best post in the world', '2018-02-11 14:48:39', '2018-02-11 14:48:39'),
+(2, 1, 1, 'The worst post in the world', '2018-02-11 14:48:39', '2018-02-11 14:48:39'),
+(3, 1, 1, 'good', '2018-02-11 14:49:13', '2018-02-11 14:49:13'),
+(4, 1, 1, 'I am the first', '2018-02-11 14:49:13', '2018-02-11 14:49:13'),
+(5, 1, 1, 'hello', '2018-02-11 14:52:37', '2018-02-11 14:52:37'),
+(6, 1, 8, 'Hello', '2018-02-11 14:53:35', '2018-02-11 14:53:35');
 
 -- --------------------------------------------------------
 
@@ -124,7 +143,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2014_10_12_000000_create_users_table', 1),
 (6, '2014_10_12_100000_create_password_resets_table', 1),
 (7, '2018_02_09_172733_create_tags_table', 1),
-(8, '2018_02_09_173227_create_articles_table', 1);
+(8, '2018_02_09_173227_create_articles_table', 1),
+(9, '2018_02_10_173436_create_comments_table', 2);
 
 -- --------------------------------------------------------
 
@@ -242,7 +262,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `articles_categories`
@@ -254,13 +274,13 @@ ALTER TABLE `articles_categories`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `tags`
