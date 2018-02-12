@@ -21,7 +21,9 @@ class SessionsController extends Controller
     {
         if( !auth()->attempt( request(['email', 'password']) ) )
         {
-            return back();
+            return back()->withErrors([
+                'message' => 'Please check your detail and try again.'
+            ]);
         }
         
         return redirect('/');
