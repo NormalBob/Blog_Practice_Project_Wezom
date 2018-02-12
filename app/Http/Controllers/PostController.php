@@ -9,6 +9,11 @@ use App\Tag;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middlware('auth');
+    }
+    
     public function index ($category_url, Article $post_url)
     {
         $categories = Articles_categorie::all();

@@ -13,5 +13,10 @@ class Comment extends Model
         return $this->belongsTo('App\Article');
     }
     
+    public function user()
+    {
+        return $this->belongsToMany('App\User');
+    }
+    
     
 }

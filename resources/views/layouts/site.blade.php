@@ -53,7 +53,9 @@
             -->
             <ul class="navbar-nav  my-2 my-lg-0">
                 <li class="nav-item">
-                    <a href="/login" class="nav-link my-2 my-lg-0">LOG IN</a>
+                    @if(Auth::check())
+                        <a href="/login" class="nav-link my-2 my-lg-0">{{ Auth::user() -> name}}</a>
+                    @endif
                 </li>
             </ul>
         </div>

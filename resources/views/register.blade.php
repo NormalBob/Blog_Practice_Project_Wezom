@@ -26,17 +26,28 @@
                             <h3 class="mb-0">Login</h3>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="/login">
+                           
+                            <form  method="post" action="/register">
                                {{ csrf_field() }}
                                
                                 <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email">
+                                    <label for="uname">Username</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="uname" id="uname" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="emailemail">Email</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email" required>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control form-control-lg rounded-0" name="password" id="password">
+                                    <input type="password" class="form-control form-control-lg rounded-0" id="password" name="password" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" id="password_confirmation" name="password_confirmation" required>
                                 </div>
                                 
 <!--
@@ -46,12 +57,10 @@
                                       <input type="hidden" name="alarm" value="False" />
                                       <span class="custom-checkbox-text">Remember me on this computer</span>
                                     </label>
-                                    
                                 </div>
 -->
-                                
                                 <dim class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg">Sign in</button>
+                                    <button type="submit" class="btn btn-success btn-lg">Register</button>
                                 </dim>
                                 
                                 @if(count($errors))

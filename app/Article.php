@@ -34,6 +34,11 @@ class Article extends Model
         return $this->belongsToMany('App\Tag');
     }
     
+    public function user()
+    {
+        return $this->belongsToMany('App\User');
+    }
+    
     public function getRouteKeyName()
     {
         return 'url';
