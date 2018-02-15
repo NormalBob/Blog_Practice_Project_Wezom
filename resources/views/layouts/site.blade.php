@@ -51,11 +51,28 @@
                     <button class="btn btn-outline-success my-2 my-lg-0">Search</button>
                 </form> 
             -->
-            <ul class="navbar-nav  my-2 my-lg-0">
+            <ul class="navbar-nav my-2 my-lg-0">
                 <li class="nav-item">
-                    @if(Auth::check())
-                        <a href="/login" class="nav-link my-2 my-lg-0">{{ Auth::user() -> name}}</a>
+                  
+                   @if (Route::has('login'))
+                       
+                        <div class="top-right links">
+                           
+                            @auth
+                                <a href="#" class="nav-link my-2 my-lg-0">{{ Auth::user() -> name}}</a>
+                            @else
+                                <li class="nav-item ">
+                                    <a href="{{ route('login') }}" class="nav-link">LOGIN</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="{{ route('register') }}" class="nav-link">REGISTER</a>
+                                </li>
+                            @endauth
+                            
+                        </div>
+                        
                     @endif
+                    
                 </li>
             </ul>
         </div>
@@ -154,6 +171,7 @@
         </div>
     </footer>
     <!-- Optional JavaScript -->
+    <script src="{{asset('js/bootstrap-formhelpers-phone.js')}}"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

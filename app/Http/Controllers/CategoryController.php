@@ -19,7 +19,7 @@ class CategoryController extends Controller
                 $cat_name = $cat['category_name'];
             }
         }
-        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url'])
+        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url', 'img'])
             ->where('category_id', $cat_id)
             ->orderBy('id', 'desc')
             ->paginate(6);

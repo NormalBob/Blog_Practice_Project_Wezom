@@ -20,7 +20,7 @@
             @foreach($articles as $art)
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="fade-right">
 					 <div class="card text-center">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
+                        <img class="card-img-top" src="{{asset('imgs/'.$art -> img)}}" alt="" width="100%">
                         <div class="card-block">
                             <h4 class="card-title">{{ $art->title }}</h4>
                             <p class="">Categorie: 

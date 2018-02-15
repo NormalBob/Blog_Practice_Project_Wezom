@@ -19,13 +19,13 @@
            <div class="row">
 				<div class="mx-auto col-lg-8 " >
 					 <div class="card">
-                        <img class="card-img-top" src="https://images.pexels.com/photos/129441/pexels-photo-129441.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
+                        <img class="card-img-top" src="{{asset('imgs/'.$article -> img)}}" alt="" width="100%">
                         <div class="card-block">
                         <div class="card-block">
                             <h2 class="card-title">{{ $article -> title }}</h2>
                             <hr>
                             
-                            <p class="card-text "><span class="ion-calendar"></span> 25.05.20515</p>
+                            <p class="card-text "><span class="ion-calendar"></span> {{ $article->created_at->toFormattedDateString() }} </p>
                             <p class="card-text">{{ $article -> text }}</p>
                             <hr>
                             <h4>Tags: 

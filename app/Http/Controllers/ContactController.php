@@ -19,10 +19,10 @@ class ContactController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'full_name' => 'required',
-            'telephone' => 'required',
-            'email' => 'required',
-            'message' => 'required'
+            'full_name' => 'required|min:2',
+            'telephone' => 'requiredregex:/(+38)[0-9]{9}/',
+            'email' => 'required|email',
+            'message' => 'required|min:10'
         ]);
         
         return redirect('/contact');
