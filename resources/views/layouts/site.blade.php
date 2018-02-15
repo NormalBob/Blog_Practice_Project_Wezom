@@ -59,7 +59,7 @@
                         <div class="top-right links">
                            
                             @auth
-                                <a href="#" class="nav-link my-2 my-lg-0">{{ Auth::user() -> name}}</a>
+                                <a href="{{ route('logout') }}" class="nav-link my-2 my-lg-0">{{ Auth::user() -> name}}</a>
                             @else
                                 <li class="nav-item ">
                                     <a href="{{ route('login') }}" class="nav-link">LOGIN</a>

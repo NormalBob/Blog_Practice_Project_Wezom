@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Articles_categorie;
+use App\Mail\ContactEmail;
+use App\Http\Requests\ContactFormRequest;
 
 class ContactController extends Controller
 {
@@ -16,14 +18,16 @@ class ContactController extends Controller
         ]);
     }
     
-    public function store()
-    {
-        $this->validate(request(), [
-            'full_name' => 'required|min:2',
-            'telephone' => 'requiredregex:/(+38)[0-9]{9}/',
-            'email' => 'required|email',
-            'message' => 'required|min:10'
-        ]);
+    public function store(Request $request)
+    {      
+        $contact = [];
+
+        $contact['full_name'] = $request->get('full_name');
+        $contact['telephone'] = $request->get('telephone');
+        $contact['email'] = $request->get('email');
+        $contact['message'] = $request->get('message');
+
+        \Mail::to(config('mail.from.address'))->send(new ContactEmail($contact));
         
         return redirect('/contact');
     }
