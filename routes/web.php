@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 Route::get('/', 'IndexController@index');
 
@@ -28,5 +31,8 @@ Route::get('/logout', 'SessionsController@destroy') -> name('logout');
 Route::get('/tags/{tag_url}', 'TagController@index')->name('tagShow');
 
 Route::get('/{category_url}', 'CategoryController@index') -> name('categoryShow');
-Route::get('/{category_url}/{post_url}', 'PostController@index') -> name('articleShow');
+Route::get('/{category_url}/{post_url}', 'PostController@index') -> name('postShow');
 Route::post('/{category_url}/{post_url}/comments', 'CommentsController@store');
+
+
+

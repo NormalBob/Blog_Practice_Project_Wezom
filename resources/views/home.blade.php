@@ -13,23 +13,23 @@
                 
            <div class="row">
            
-            @foreach($articles as $art)
+            @foreach($posts as $post)
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="fade-right">
 					 <div class="card text-center">
-                        <img class="card-img-top" src="{{asset('imgs/'.$art -> img)}}" alt="" width="100%">
+                        <img class="card-img-top" src="{{asset('storage/'.$post -> image)}}" alt="" width="100%">
                         <div class="card-block">
-                            <h4 class="card-title">{{ $art->title }}</h4>
+                            <h4 class="card-title">{{ $post->title }}</h4>
                             <p class="">Categorie: 
                                 @foreach($categories as $cat)
-                                    @if($cat->id == $art->category_id)
-                                         <a href="{{ route('categoryShow', [$category_url = $cat->url]) }}">{{ $cat->category_name }}</a>
+                                    @if($cat->id == $post->category_id)
+                                         <a href="{{ route('categoryShow', [$category_url = $cat->slug]) }}">{{ $cat->name }}</a>
                                          
                                     @endif
                                 @endforeach
                             </p>
-                            <p class="card-text  ">{{ mb_substr(strip_tags($art->text), 0, 110, 'utf-8')."..." }}</p>
-                            <a class="btn btn-default" href="{{ route('articleShow', ['category_url'=>$category_url,
-                            'url'=>$art->url]) }}">Read More</a>
+                            <p class="card-text  ">{{ strip_tags($post->excerpt) }}</p>
+                            <a class="btn btn-default" href="{{ route('postShow', ['category_url'=>$category_url,
+                            'url'=>$post->slug]) }}">Read More</a>
                         </div>
                      </div>
                 </div>
@@ -39,7 +39,7 @@
                 
             <div class="row">
                 <div class="mx-auto text-center">  
-                   {!! $articles -> links('pagination::bootstrap-4'); !!}
+                   {!! $posts -> links('pagination::bootstrap-4'); !!}
                  </div>
             </div>
         </div>

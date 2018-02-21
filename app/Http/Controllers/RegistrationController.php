@@ -27,13 +27,14 @@ class RegistrationController extends Controller
         $user = User::create([ 
             'name' => request('uname'),
             'email' => request('email'),
-            'password' => bcrypt(request('password'))
+            'password' => bcrypt(request('password')),
+            'avatar' => 'users/default.png'
         ]);
         
         // Sign them in
         auth() -> login($user);
         
-        \Mail::to($user)->send(new Welcome);
+        \Mail::to($user->email)->send(new Welcome);
         
         // Redirect to home page
         return redirect('/');

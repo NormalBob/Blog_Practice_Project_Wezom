@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Articles_categorie;
+
+use App\Categorie;
+
 use App\Mail\ContactEmail;
+
 use App\Http\Requests\ContactFormRequest;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        $categories = Articles_categorie::all();
+        $categories = Categorie::all();
         
         return view('contact')->with([
             'categories' => $categories
         ]);
     }
     
-    public function store(Request $request)
+    public function store(ContactFormRequest $request)
     {      
         $contact = [];
 
@@ -26,6 +29,7 @@ class ContactController extends Controller
         $contact['telephone'] = $request->get('telephone');
         $contact['email'] = $request->get('email');
         $contact['message'] = $request->get('message');
+        
 
         \Mail::to(config('mail.from.address'))->send(new ContactEmail($contact));
         

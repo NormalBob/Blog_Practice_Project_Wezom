@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Articles_categorie;
-use App\Article;
+use App\Categorie;
+use App\Post;
 use App\Tag;
+use App\Comments;
 
 class PostController extends Controller
 {
@@ -14,19 +15,23 @@ class PostController extends Controller
         //$this->middlware('auth');
     }
     
-    public function index ($category_url, Article $post_url)
+    public function index ($category_url, Post $post_url)
     {
-        $categories = Articles_categorie::all();
-        $article = Article::where('url', $post_url['url'])->first();
+        $categories = Categorie::all();
+        
+        $post = Post::where('slug', $post_url['slug'])->first();
+        
+        $comments = $post_url -> comments() -> orderBy('id', 'desc') -> paginate();
         
         $tags = $post_url -> tags;
         
-        //dump($tags);
+        //dump($comments);
         return view('post')->with([
             'categories' => $categories,
             'category_url' => $category_url,
-            'article' => $article,
-            'tags' => $tags
+            'post' => $post,
+            'tags' => $tags,
+            'comments' => $comments,
         ]);
     }
 }

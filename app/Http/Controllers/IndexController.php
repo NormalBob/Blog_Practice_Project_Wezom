@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Article;
-use App\Articles_categorie;
+use App\Post;
+use App\Categorie;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url', 'img'])->orderBy('id','desc')->paginate(6);
-        $categories = Articles_categorie::all();
+        $posts = Post::select(['id', 'title', 'body', 'category_id', 'excerpt', 'image', 'slug'])->orderBy('id','desc')->paginate(6);
+        $categories = Categorie::all();
 
         return view('home')->with([
-            'articles' => $articles,
+            'posts' => $posts,
             'categories' => $categories
         ]);
     }   

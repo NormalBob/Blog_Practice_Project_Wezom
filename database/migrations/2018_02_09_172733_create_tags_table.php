@@ -15,14 +15,19 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
+            
             $table->string('name')->unique();
-            $table->string('url')->unique();
+            $table->string('slug')->unique();
+            
             $table->timestamps();
         });
         
-         Schema::create('article_tag', function (Blueprint $table) {
-            $table->integer('article_id');
+         Schema::create('post_tag', function (Blueprint $table) {
+            $table->increments('id');
+             
+            $table->integer('post_id');
             $table->integer('tag_id');
+             
             $table->primary(['post_id', 'tag_id']);
         });
     }

@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    public function articles()
+    public function posts()
     {
-        return $this->belongsToMany('App\Article');
+        return $this->belongsToMany('App\Post');
     }
     
     public function getRouteKeyName()
     {
-        return 'url';
+        return 'slug';
     }
 }

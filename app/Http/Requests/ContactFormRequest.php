@@ -13,7 +13,7 @@ class ContactFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,10 +24,11 @@ class ContactFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'full_name' => 'required|min:2|max: 255',
-            'telephone' => 'requiredregex:/(+38)[0-9]{9}/',
-            'email'     => 'required|email',
-            'message'   => 'required|min:10|max: 255'
+            'full_name'            => 'required|min:2|max: 255',
+            'telephone'            => 'required|regex:/^(\+380)[0-9]{9}$/|numeric',
+            'email'                => 'required|email',
+            'message'              => 'required|min:10|max: 255',
+            'g-recaptcha-response' => 'required|recaptcha'
         ];
     }
 }

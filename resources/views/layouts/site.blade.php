@@ -33,7 +33,7 @@
                     <ul class="dropdown-menu bg-dark">
                     @foreach($categories as $cat)
                         <li class="nav-item">
-                            <a href="{{ route('categoryShow', $cat->url) }}" class="nav-link">{{$cat->category_name}}</a>
+                            <a href="{{ route('categoryShow', $cat->slug) }}" class="nav-link">{{$cat->name}}</a>
                         </li>
                     @endforeach
                     </ul>
@@ -51,29 +51,42 @@
                     <button class="btn btn-outline-success my-2 my-lg-0">Search</button>
                 </form> 
             -->
-            <ul class="navbar-nav my-2 my-lg-0">
-                <li class="nav-item">
-                  
-                   @if (Route::has('login'))
-                       
-                        <div class="top-right links">
+            
+            <ul class="nav navbar-nav navbar-right">
+                @auth
+                    <li class="dropdown profile">
+
+                        <a href="#" class="dropdown-toggle text-right nav-link" data-toggle="dropdown" role="button" aria-expanded="false">
                            
-                            @auth
-                                <a href="{{ route('logout') }}" class="nav-link my-2 my-lg-0">{{ Auth::user() -> name}}</a>
-                            @else
-                                <li class="nav-item ">
-                                    <a href="{{ route('login') }}" class="nav-link">LOGIN</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a href="{{ route('register') }}" class="nav-link">REGISTER</a>
-                                </li>
-                            @endauth
+                            <img src="{{ asset('storage/'.Auth::user()->avatar) }}" class="img-circle" style="width: 30px; height: 30px; border-radius: 50%;" > 
+                            <span class="caret"></span>
                             
-                        </div>
+                        </a>
                         
-                    @endif
-                    
-                </li>
+                        <ul class="dropdown-menu  dropdown-menu-right bg-dark" style="width: 250px; padding: 18px;">
+                            <li class="profile-img nav-item" style="overflow: hidden;">
+                               
+                                <img src="{{ asset('storage/'.Auth::user()->avatar) }}" class="img-circle" style="width: 60px; height: 60px; float: left; border-radius: 50%; margin-right: 10px;">
+                                
+                                <div class="profile-body">
+                                    <h5 class="text-muted">{{ Auth::user()->name }}</h5>
+                                    <h6 class="text-muted">{{ Auth::user()->email }}</h6>
+                                </div>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}" class="btn btn-danger btn-block" style="margin-top: 20px;">LOGOUT</a>
+                            </li>
+                        </ul>
+                    </li>
+                @else
+                    <li class="nav-item ">
+                        <a href="{{ route('login') }}" class="nav-link">LOGIN</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="{{ route('register') }}" class="nav-link">REGISTER</a>
+                    </li>
+                @endauth
             </ul>
         </div>
     </nav>
@@ -171,6 +184,7 @@
         </div>
     </footer>
     <!-- Optional JavaScript -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="{{asset('js/bootstrap-formhelpers-phone.js')}}"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -19,21 +19,23 @@
            <div class="row">
 				<div class="mx-auto col-lg-8 " >
 					 <div class="card">
-                        <img class="card-img-top" src="{{asset('imgs/'.$article -> img)}}" alt="" width="100%">
+                        <img class="card-img-top" src="{{ asset('storage/'.$post -> image )}}" alt="" width="100%">
                         <div class="card-block">
                         <div class="card-block">
-                            <h2 class="card-title">{{ $article -> title }}</h2>
+                            <h2 class="card-title">{{ $post -> title }}</h2>
                             <hr>
                             
-                            <p class="card-text "><span class="ion-calendar"></span> {{ $article->created_at->toFormattedDateString() }} </p>
-                            <p class="card-text">{{ $article -> text }}</p>
+                            <p class="card-text "><span class="ion-calendar"></span> {{ $post->created_at->toFormattedDateString() }} </p>
+                            <p class="card-text">{!! $post -> body !!}</p>
                             <hr>
+
                             <h4>Tags: 
                                 @foreach($tags as $tag)
-                                  <a href="{{ route('tagShow', ['tag_url'=>$tag->url]) }}" class="btn btn-info btn-sm" role="button">{{ $tag->name }}</a>
+                                  <a href="{{ route('tagShow', ['tag_url'=>$tag->slug]) }}" class="btn btn-info btn-sm" role="button">{{ $tag->name }}</a>
                                 @endforeach
                               
                             </h4>
+
                         </div>
                      </div>
                 </div>
@@ -50,7 +52,7 @@
                            
                             <h4 class="card-title">Add Comment</h4>
                             
-                            <form method="post" action="/{{ $category_url }}/{{ $article -> url }}/comments">
+                            <form method="post" action="/{{ $category_url }}/{{ $post -> slug }}/comments">
                                {{ csrf_field() }}
                                
                                 <div class="col-lg-12">
@@ -64,6 +66,18 @@
                                         <span>SUBMIT</span>
                                     </button>
                                 </div>
+                                
+                                @if(count($errors))
+                                    <div class="form-group">
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endif
                             </form>
                             
                         </div>
@@ -80,16 +94,15 @@
 					 <div class="card">
                         <div class="card-block">
                             <h4 class="card-title">Comments</h4>
-                        </div>
-                        <div class="card-block">
+                            <hr>
                             <ul class="list-unstyled">
-                            @if(count($article->comments) > 0)
+                            @if(count($comments) > 0)
                                
-                                @foreach($article->comments as $comment)
-                                  <li class="media">
-                                    <img class="d-flex mr-3" src="https://image.flaticon.com/icons/svg/148/148717.svg" alt="Generic placeholder image">
+                                @foreach($comments as $comment)
+                                  <li class="media mt-2">
+                                    <img class="d-flex mr-3 img-circle " style="width: 100px; height: 100px; border-radius: 50%;" src="{{ asset('storage/'.$comment->user->avatar) }}" alt="Generic placeholder image">
                                     <div class="media-body">
-                                      <h5 class="mt-0 mb-1">Dima <small>{{ $comment->created_at->diffForHumans() }}</small></h5>
+                                      <h5 class="mt-0 mb-1">{{ $comment->user->name}} <small>{{ $comment->created_at->diffForHumans() }}</small></h5>
                                         {{ $comment->text }}
                                     </div>
                                   </li>

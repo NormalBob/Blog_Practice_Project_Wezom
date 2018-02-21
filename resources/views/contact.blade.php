@@ -39,32 +39,38 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" name="full_name" id="ad_soyad" class="form-control" placeholder="Full name" >
+                                        <input type="text" name="full_name" id="ad_soyad" class="form-control" placeholder="Full name" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" name="telephone" id="ad_soyad" placeholder="+38(xxx)-xxx-xx-xx" class="input-medium bfh-phone form-control" data-format="+38 (ddd) ddd-dddd">
+                                        <input type="text" name="telephone" id="ad_soyad" placeholder="+38(xxx)-xxx-xx-xx" class="input-medium bfh-phone form-control" data-format="+38 (ddd) ddd-dddd" required>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" >
+                                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <textarea type="text" class="form-control" name="message" rows="5" style="overflow:hidden" placeholder="Message" ></textarea>
+                                        <textarea type="text" class="form-control" name="message" rows="5" style="overflow:hidden" placeholder="Message" required></textarea>
                                     </div>
                                 </div>
-
+                                
+                                <div class="col-lg-12">
+                                   <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}" ></div>
+                                </div>
+                                
                                 <div class="col-lg-12">
                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-default">SUBMIT</button>
+                                        <button type="submit" class="btn btn-default" >SUBMIT</button>
                                     </div>
                                 </div>
+                                
+                                
                                 
                                 @if(count($errors))
                                     <div class="col-lg-12">

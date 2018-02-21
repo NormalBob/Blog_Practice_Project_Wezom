@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Article;
-use App\Articles_categorie;
+use App\Post;
+use App\Categorie;
 
 class CategoryController extends Controller
 {
     public function index($category_url)
     {
-        $categories = Articles_categorie::all();
+        $categories = Categorie::all();
         foreach($categories as $cat)
         {
-            if($category_url == $cat['url'])
+            if($category_url == $cat['slug'])
             {
                 $cat_id = $cat['id'];
-                $cat_name = $cat['category_name'];
+                $cat_name = $cat['name'];
             }
         }
-        $articles = Article::select(['id', 'title', 'text', 'category_id', 'url', 'img'])
+        $posts = Post::select(['id', 'title', 'body', 'category_id', 'excerpt', 'image', 'slug'])
             ->where('category_id', $cat_id)
             ->orderBy('id', 'desc')
             ->paginate(6);
@@ -27,7 +27,7 @@ class CategoryController extends Controller
         //dump($categories);
         
         return view('category')->with([
-            'articles' => $articles,
+            'posts' => $posts,
             'categories' => $categories,
             'category_name' => $cat_name,
             'category_url' => $category_url
